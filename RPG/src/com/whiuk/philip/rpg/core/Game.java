@@ -76,7 +76,7 @@ public class Game extends Thread {
     }
     /**
      * Fired when the location changes
-     * @param name
+     * @param name Name of new location.
      */
     private void fireLocationChanged(String name) {
         for (GameEventListener l : listeners) {

@@ -6,7 +6,43 @@ package com.whiuk.philip.rpg.core;
  */
 public enum Direction {
     /**
-     * A direction constant.
+     * North.
      */
-    NORTH, EAST, SOUTH, WEST, NORTHEAST, NORTHWEST, UP, DOWN
+    NORTH,
+    /**
+     * East.
+     */
+    EAST,
+    /**
+     * South.
+     */
+    SOUTH,
+    /**
+     * West.
+     */
+    WEST,
+    /**
+     * North-East.
+     */
+    NORTHEAST,
+    /**
+     * North-West.
+     */
+    NORTHWEST,
+    /**
+     * South-East.
+     */
+    SOUTHEAST,
+    /**
+     * South-West.
+     */
+    SOUTHWEST,
+    /**
+     * Up.
+     */
+    UP,
+    /**
+     * Down.
+     */
+    DOWN;
 }

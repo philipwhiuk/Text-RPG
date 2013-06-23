@@ -54,6 +54,9 @@ public final class Application extends JFrame implements Output {
     private HTMLDocument doc;
     private Element messagesElement;
 
+    /**
+     * Constructor.
+     */
 	public Application() {
 		super(FRAME_TITLE);
 		textarea = new JTextPane();
@@ -125,8 +128,8 @@ public final class Application extends JFrame implements Output {
 	}
 	/**
 	 * 
-	 * @param needle
-	 * @return
+	 * @param needle Search parameter
+	 * @return Auto-completion suggestions
 	 */
 	private List<String> autoComplete(String needle) {
 		ArrayList<String> autoCompletions = new ArrayList<String>();
@@ -139,7 +142,7 @@ public final class Application extends JFrame implements Output {
 	}
 	
 	/**
-	 * @param args
+	 * @param args Command line arguments
 	 */
 	public static void main(String[] args) {
 	    //Some Setup
