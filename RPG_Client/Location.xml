@@ -1,0 +1,5 @@
+<objects id="0">
+<location id="1" name="Courtyard">
+	<onEnterText>You arrive</onEnterText>
+</location>
+</objects>
