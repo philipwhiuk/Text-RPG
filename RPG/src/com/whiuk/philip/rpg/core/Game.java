@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
+import com.whiuk.philip.rpg.actionHandlers.ActionHandler;
+
 /**
  * A game in the system.
  * @author Philip
@@ -88,43 +90,7 @@ public class Game extends Thread {
      * @param input The input to the game
      */
     private void processInput(final String input) {
-        String[] inputData = input.split(" ", 1);
-        switch(inputData[0]) {
-            case "MOVE":
-                handler.move(inputData[1]); break;
-            case "TALK":
-                handler.talk(inputData[1]); break;
-            case "BUY":
-                handler.buy(inputData[1]); break;
-            case "SELL":
-                handler.sell(inputData[1]); break;
-            case "FIGHT":
-                handler.fight(inputData[1]); break;
-            case "USE":
-                handler.use(inputData[1]); break;
-            case "SHOW":
-                handler.show(inputData[1]); break;
-            case "CAST":
-                handler.cast(inputData[1]); break;
-            case "TAKE":
-                handler.talk(inputData[1]); break;
-            case "DROP":
-                handler.drop(inputData[1]); break;
-            case "EQUIP":
-                handler.equip(inputData[1]); break;
-            case "REMOVE":
-                handler.remove(inputData[1]); break;
-            case "ACCEPT":
-                handler.accept(inputData[1]); break;
-            case "DECLINE":
-                handler.decline(inputData[1]); break;
-            case "SAVE":
-                handler.save(inputData[1]); break;
-            case "EXIT":
-                handler.exit(inputData[1]); break;
-            default:
-                output.sendErrorMessage("Unknown action."); break;
-        }
+        CommandProcessor.process(input, handler, output);
     }
     /**
      * Retrieves the output target.
@@ -144,16 +110,16 @@ public class Game extends Thread {
      * Adds a game event listener.
      * @param l the listener
      */
-    public void addGameEventListener(GameEventListener l) {
+    public final void addGameEventListener(final GameEventListener l) {
         listeners.add(l);
     }
     /**
      * Removes a game event listener.
      * @param l the listener
      */
-    public void removeGameEventListener(GameEventListener l) {
+    public final void removeGameEventListener(final GameEventListener l) {
         listeners.remove(l);
-    }    
+    }
     /**
      * The options available.
      * @return An array of options
