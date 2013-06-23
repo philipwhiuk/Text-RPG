@@ -8,6 +8,10 @@ import java.util.Collection;
  */
 public final class NPC {
     /**
+     * 
+     */
+    public static Conversation lastConversation;
+    /**
      * Loads a collection of NPCs from unique identifiers.
      * @param relationOneToManyIDs
      *            A collection of ids
